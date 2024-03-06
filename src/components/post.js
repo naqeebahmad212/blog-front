@@ -9,7 +9,7 @@ const Post = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/blogs/${id}`)
+      .get(`${server}/blogs/${id}`)
       .then((res) => {
         // console.log(res.data)
         setPost(res.data);
@@ -17,11 +17,11 @@ const Post = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [`http://localhost:3001/blogs/${id}`]);
+  });
 
   const deleteHandler = () => {
     axios
-      .delete(`http://localhost:3001/blogs/${id}`)
+      .delete(`${server}/blogs/${id}`)
       .then((res) => {
         if (res.data === "deleted") {
           navigate("/");

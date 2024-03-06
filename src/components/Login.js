@@ -31,7 +31,9 @@ const Login = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/check-user", { withCredentials: true })
+      .get("https://blog-back-bzo6.vercel.app/check-user", {
+        withCredentials: true,
+      })
       .then((res) => {
         if (res.data.loggedIn === true) {
           navigate("/");

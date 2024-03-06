@@ -7,7 +7,7 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/")
+      .get("https://blog-back-bzo6.vercel.app/")
       .then((res) => {
         setPosts(res.data);
       })
